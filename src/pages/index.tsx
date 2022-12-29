@@ -21,7 +21,7 @@ const Home: NextPage = () => {
     setMyOpt(option);
     setTimeout(() => {
       setShowModal(true);
-    }, 1000);
+    }, 3000);
     const computerOption = Math.floor(Math.random() * 3);
     setComputerOpt(computerOption);
     if (computerOption === option) {
