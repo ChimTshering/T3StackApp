@@ -12,7 +12,6 @@ export const ResultModal = (props: ModalProps) => {
   const closeModal = () => {
     props.setShow(false);
   };
-  console.log(props)
   return (
     <div className="fixed top-0 left-0 right-0 bottom-0">
       <div className="absolute w-full h-full top-0 left-0 right-0 bottom-0 z-10 flex flex-col justify-center items-center m-auto bg-black/50">
@@ -35,16 +34,16 @@ export const ResultModal = (props: ModalProps) => {
               <h3 className="text-4xl p-2 text-gray-800 flex items-center mb-5">
                 {props.result}
               </h3>
-              <h3 className="text-xl p-2 text-gray-600">
+              <h3 className="text-xl p-2 text-gray-800">
                 {props.userName ? props.userName : "Player 1"} :{" "}
-                {props.computerOpt && findOptionLabel(props.computerOpt)}
+                {props.playerOpt !==undefined && findOptionLabel(props.playerOpt)}
               </h3>
               <h3 className="text-xl p-2 text-gray-800">
-                Computer : {props.playerOpt && findOptionLabel(props.playerOpt)}
+                Computer : {props.computerOpt !== undefined && findOptionLabel(props.computerOpt)}
               </h3>
             </div>
             <div
-              className="mt-6 outline-0 rounded bg-purple-500 py-2 px-5 font-bold text-white w-32 text-center"
+              className="mt-6 outline-0 rounded bg-purple-700 py-2 px-5 font-bold text-white w-32 text-center hover:cursor-pointer hover:bg-purple-500"
               onClick={closeModal}
             >
               <button type="button">Okay</button>
